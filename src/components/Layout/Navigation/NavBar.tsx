@@ -1,10 +1,11 @@
 import s from './NavBar.module.scss'
+import NavBarLinks from './NavBarLinks/NavBarLinks'
 
 const NavBar = () => {
   return (
     <nav>
       <div className={`container ${s.nav}`}>
-        <div>links</div>
+        <NavBarLinks />
         <div>logo</div>
         <div>cartButton</div>
       </div>
