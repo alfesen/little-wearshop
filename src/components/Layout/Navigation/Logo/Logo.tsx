@@ -13,7 +13,7 @@ const Logo = (props: Props) => {
         <circle
           r='12'
           cx='30'
-          cy='38'
+          cy='37'
           height='50'
           width='50'
           fill='royalblue'
