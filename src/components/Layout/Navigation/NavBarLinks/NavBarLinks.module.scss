@@ -1,0 +1,16 @@
+.nav {
+  &__links {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    height: 100%;
+    padding: 0.5em 1em;
+  }
+}

@@ -1,11 +1,12 @@
 nav {
   display: flex;
-  align-items: center;
   height: 4rem;
   background-color: #333;
   .nav {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     color: #fff;
+    height: 100%;
   }
 }
