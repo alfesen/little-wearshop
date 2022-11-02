@@ -1,0 +1,17 @@
+.cart__button {
+  appearance: none;
+  background-color: transparent;
+  padding: 0.5em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  img {
+    width: 1.5rem;
+    transition: opacity 0.2s;
+  }
+  &:hover {
+    img {
+      opacity: 0.5;
+    }
+  }
+}
