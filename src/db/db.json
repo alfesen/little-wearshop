@@ -1,0 +1,254 @@
+{
+  "categories": [
+    {
+      "id": "c1",
+      "name": "men",
+      "products": [
+        {
+          "id": "mp1",
+          "name": "Suit Jacket",
+          "description": "For every occasion, starting with birth, through wedding all the way to the funeral!",
+          "price": 49.99,
+          "images": [
+            "https://pixabay.com/get/g828ba20f17f098d55a9be183e81fbcb3688dce98ca0feb0f3eb80d5d97402697da6685cc61064a3ee61d455431b93cff_640.jpg",
+            "https://pixabay.com/get/g828ba20f17f098d55a9be183e81fbcb3688dce98ca0feb0f3eb80d5d97402697da6685cc61064a3ee61d455431b93cff_640.jpg",
+            "https://pixabay.com/get/g828ba20f17f098d55a9be183e81fbcb3688dce98ca0feb0f3eb80d5d97402697da6685cc61064a3ee61d455431b93cff_640.jpg",
+            "https://pixabay.com/get/g828ba20f17f098d55a9be183e81fbcb3688dce98ca0feb0f3eb80d5d97402697da6685cc61064a3ee61d455431b93cff_640.jpg"
+          ]
+        },
+        {
+          "id": "mp2",
+          "name": "Great Jeans",
+          "description": "New, solid, whole.",
+          "price": 23.99,
+          "images": [
+            "https://pixabay.com/images/download/hemorrhoids-2790200_640.jpg",
+            "https://pixabay.com/images/download/hemorrhoids-2790200_640.jpg",
+            "https://pixabay.com/images/download/hemorrhoids-2790200_640.jpg",
+            "https://pixabay.com/images/download/hemorrhoids-2790200_640.jpg"
+          ]
+        },
+        {
+          "id": "mp3",
+          "name": "Detective Hat",
+          "description": "Detective hat. Add a pipe, to gain your perceptivity!",
+          "price": 20.99,
+          "images": [
+            "https://pixabay.com/images/download/old-man-5416999_640.jpg",
+            "https://pixabay.com/images/download/old-man-5416999_640.jpg",
+            "https://pixabay.com/images/download/old-man-5416999_640.jpg",
+            "https://pixabay.com/images/download/old-man-5416999_640.jpg"
+          ]
+        },
+        {
+          "id": "mp4",
+          "name": "Classic Black Shoes",
+          "description": "The only way to go after 6pm",
+          "price": 49.99,
+          "images": [
+            "https://pixabay.com/images/download/foot-1744045_640.jpg",
+            "https://pixabay.com/images/download/foot-1744045_640.jpg",
+            "https://pixabay.com/images/download/foot-1744045_640.jpg",
+            "https://pixabay.com/images/download/foot-1744045_640.jpg"
+          ]
+        },
+        {
+          "id": "mp5",
+          "name": "Elegant Tie",
+          "description": "You may work at home, but you cannot live without tie!",
+          "price": 9.99,
+          "images": [
+            "https://pixabay.com/images/download/business-3189628_640.jpg",
+            "https://pixabay.com/images/download/business-3189628_640.jpg",
+            "https://pixabay.com/images/download/business-3189628_640.jpg",
+            "https://pixabay.com/images/download/business-3189628_640.jpg"
+          ]
+        },
+        {
+          "id": "mp6",
+          "name": "Multitool belt",
+          "description": "It has more functions than only one 😉",
+          "price": 49.99,
+          "images": [
+            "https://pixabay.com/images/download/menswear-952836_640.jpg",
+            "https://pixabay.com/images/download/menswear-952836_640.jpg",
+            "https://pixabay.com/images/download/menswear-952836_640.jpg",
+            "https://pixabay.com/images/download/menswear-952836_640.jpg"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "c2",
+      "name": "women",
+      "products": [
+        {
+          "id": "wp1",
+          "name": "Pretty Coat",
+          "description": "For no kind of weather, just to be creamy",
+          "price": 69.99,
+          "images": [
+            "https://pixabay.com/images/download/girl-926225_640.jpg",
+            "https://pixabay.com/images/download/girl-926225_640.jpg",
+            "https://pixabay.com/images/download/girl-926225_640.jpg",
+            "https://pixabay.com/images/download/girl-926225_640.jpg"
+          ]
+        },
+        {
+          "id": "wp2",
+          "name": "Original Skirt",
+          "description": "Weird skirt for lying on rotting leaves. Enjoy!",
+          "price": 23.99,
+          "images": [
+            "https://pixabay.com/images/download/ballerina-2359709_640.jpg",
+            "https://pixabay.com/images/download/ballerina-2359709_640.jpg",
+            "https://pixabay.com/images/download/ballerina-2359709_640.jpg",
+            "https://pixabay.com/images/download/ballerina-2359709_640.jpg"
+          ]
+        },
+        {
+          "id": "wp3",
+          "name": "Designer's mistake",
+          "description": "Bring exotic wherever you go!",
+          "price": 32.99,
+          "images": [
+            "https://pixabay.com/images/download/girl-1505407_640.jpg",
+            "https://pixabay.com/images/download/girl-1505407_640.jpg",
+            "https://pixabay.com/images/download/girl-1505407_640.jpg",
+            "https://pixabay.com/images/download/girl-1505407_640.jpg"
+          ]
+        },
+        {
+          "id": "wp4",
+          "name": "Mantis Style Shoes",
+          "description": "If you ever dream about walking like mantis, this is your chance!",
+          "price": 49.99,
+          "images": [
+            "https://pixabay.com/images/download/fashion-601557_640.jpg",
+            "https://pixabay.com/images/download/fashion-601557_640.jpg",
+            "https://pixabay.com/images/download/fashion-601557_640.jpg",
+            "https://pixabay.com/images/download/fashion-601557_640.jpg"
+          ]
+        },
+        {
+          "id": "wp5",
+          "name": "Travel Bag",
+          "description": "Travel is life, and life is travel, take everything you need",
+          "price": 29.99,
+          "images": [
+            "https://pixabay.com/images/download/people-2603771_640.jpg",
+            "https://pixabay.com/images/download/people-2603771_640.jpg",
+            "https://pixabay.com/images/download/people-2603771_640.jpg",
+            "https://pixabay.com/images/download/people-2603771_640.jpg"
+          ]
+        },
+        {
+          "id": "wp6",
+          "name": "Sunproof Hat",
+          "description": "You only need one head to wear the hat on!",
+          "price": 10.99,
+          "images": [
+            "https://pixabay.com/images/download/woman-2263310_640.jpg",
+            "https://pixabay.com/images/download/woman-2263310_640.jpg",
+            "https://pixabay.com/images/download/woman-2263310_640.jpg",
+            "https://pixabay.com/images/download/woman-2263310_640.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "name": "kids",
+      "products": [
+        {
+          "id": "kp1",
+          "name": "Big Teepee",
+          "description": "Every kid dreams about sleepover with friends under the starry sky",
+          "price": 89.99,
+          "images": [
+            "https://pixabay.com/images/download/teepee-2647263_640.jpg",
+            "https://pixabay.com/images/download/teepee-2647263_640.jpg",
+            "https://pixabay.com/images/download/teepee-2647263_640.jpg",
+            "https://pixabay.com/images/download/teepee-2647263_640.jpg"
+          ]
+        },
+        {
+          "id": "kp2",
+          "name": "Little Sad Teddy Bear",
+          "description": "Not every toy should smile. Everlasting smile is extremely creepy. Sadness is normal!",
+          "price": 23.99,
+          "images": [
+            "https://pixabay.com/images/download/baby-623417_640.jpg",
+            "https://pixabay.com/images/download/baby-623417_640.jpg",
+            "https://pixabay.com/images/download/baby-623417_640.jpg",
+            "https://pixabay.com/images/download/baby-623417_640.jpg"
+          ]
+        },
+        {
+          "id": "kp3",
+          "name": "The Kite",
+          "description": "Show your kid the heights it can achieve!",
+          "price": 6.99,
+          "images": [
+            "https://pixabay.com/images/download/kite-2160948_640.jpg",
+            "https://pixabay.com/images/download/kite-2160948_640.jpg",
+            "https://pixabay.com/images/download/kite-2160948_640.jpg",
+            "https://pixabay.com/images/download/kite-2160948_640.jpg"
+          ]
+        },
+        {
+          "id": "kp4",
+          "name": "Creativity Hat",
+          "description": "Hat is your kid's creativity engine",
+          "price": 10.99,
+          "images": [
+            "https://pixabay.com/images/download/camera-2863614_640.jpg",
+            "https://pixabay.com/images/download/camera-2863614_640.jpg",
+            "https://pixabay.com/images/download/camera-2863614_640.jpg",
+            "https://pixabay.com/images/download/camera-2863614_640.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "name": "tech",
+      "products": [
+        {
+          "id": "tp1",
+          "name": "PrairieDog Mic",
+          "description": "Want to sing Hatfield style? PrairieDog mic is for you!",
+          "images": [
+            "https://pixabay.com/images/download/prairie-dog-1470659_640.jpg",
+            "https://pixabay.com/images/download/prairie-dog-1470659_640.jpg",
+            "https://pixabay.com/images/download/prairie-dog-1470659_640.jpg",
+            "https://pixabay.com/images/download/prairie-dog-1470659_640.jpg"
+          ]
+        },
+        {
+          "id": "tp2",
+          "name": "Froggy Headset",
+          "description": "Remember Crazy Frog? You may be crazy frog too!",
+          "images": [
+            "https://pixabay.com/images/download/frogs-903221_640.jpg",
+            "https://pixabay.com/images/download/frogs-903221_640.jpg",
+            "https://pixabay.com/images/download/frogs-903221_640.jpg",
+            "https://pixabay.com/images/download/frogs-903221_640.jpg"
+          ]
+        },
+        {
+          "id": "tp3",
+          "name": "Monkey Music",
+          "description": "Go wild with your new monkey stratocaster!",
+          "images": [
+            "https://pixabay.com/images/download/monkey-3507317_640.jpg",
+            "https://pixabay.com/images/download/monkey-3507317_640.jpg",
+            "https://pixabay.com/images/download/monkey-3507317_640.jpg",
+            "https://pixabay.com/images/download/monkey-3507317_640.jpg"
+          ]
+        }
+      ]
+    }
+  ]
+}
