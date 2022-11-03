@@ -3,7 +3,7 @@ import db from '../db/db.json'
 import { ProductState , Category} from '../types/Types'
 
 
-const ProductsSlice = createSlice({
+const productsSlice = createSlice({
   name: 'products',
   initialState: {
     categories: db.categories as Category[],
@@ -15,6 +15,6 @@ const ProductsSlice = createSlice({
   },
 })
 
-export const productsActions = ProductsSlice.actions
+export const productsActions = productsSlice.actions
 
-export default ProductsSlice
+export default productsSlice
