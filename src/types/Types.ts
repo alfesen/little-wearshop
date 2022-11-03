@@ -1,3 +1,7 @@
+export type Nav = {
+  show: boolean
+}
+
 export type Product = {
   id: string;
   name: string;
@@ -13,5 +17,10 @@ export type Category = {
 }
 
 export interface ProductState {
-  categories: Category[]
+  categories: Category[],
+}
+
+export interface State {
+  products: ProductState,
+  nav: Nav
 }
