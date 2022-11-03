@@ -3,19 +3,27 @@ nav {
   position: relative;
   height: 4rem;
   background-color: #333;
+  z-index: 100;
   .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #fff;
     height: 100%;
+    .logo {
+      scale: 0.3;
+      rotate: 90deg;
+    }
   }
-  .logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    scale: 0.3;
-    rotate: 90deg;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+    }
   }
 }
