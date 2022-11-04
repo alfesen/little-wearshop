@@ -1,7 +1,7 @@
 import s from './NavBar.module.scss'
 import NavBarLinks from './NavBarLinks/NavBarLinks'
 import Logo from './Logo/Logo'
-import CartButton from './CartButton/CartButton'
+import CartButton from '../../UI/CartButton/CartButton'
 
 const NavBar = () => {
   return (
