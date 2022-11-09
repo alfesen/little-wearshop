@@ -7,6 +7,7 @@ const productsSlice = createSlice({
   name: 'products',
   initialState: {
     categories: db.categories as Category[],
+    currency: '$'
   } as ProductState,
   reducers: {
     console(state) {

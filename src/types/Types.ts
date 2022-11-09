@@ -7,7 +7,7 @@ export type Product = {
   name: string;
   description: string;
   price: number;
-  images: string[];
+  images: string[] | string;
 }
 
 export type Category = {
@@ -18,6 +18,7 @@ export type Category = {
 
 export interface ProductState {
   categories: Category[],
+  currency: string
 }
 
 export interface State {

@@ -1,10 +1,13 @@
 .cart__button {
   appearance: none;
-  background-color: transparent;
-  padding: 0.5em;
-  border: none;
+  padding: 1em;
   outline: none;
   cursor: pointer;
+  background-color: gold;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 50%;
+  scale: 0.7;
   img {
     width: 1.5rem;
     transition: opacity 0.2s;

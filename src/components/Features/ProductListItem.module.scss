@@ -1,0 +1,31 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  &__image {
+    width: 100%;
+    margin-bottom: 1em;
+    img {
+      width: 100%;
+    }
+  }
+  &__description {
+    position: relative;
+
+    h4 {
+      margin-bottom: 0.5em;
+    }
+    span {
+      color: #000000aa;
+      margin-bottom: 0.5em;
+    }
+  }
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    translate: 0 -60%;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
