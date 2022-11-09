@@ -1,3 +1,6 @@
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { currencyActions } from './store/currency-slice'
 import NavBar from './components/Layout/Navigation/NavBar'
 import { Switch, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -7,6 +10,21 @@ import ProductList from './components/Features/ProductList'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const requestURL =
+      'https://api.exchangerate.host/latest?base=USD&symbols=EUR,GBP,RUB,JPY'
+    const req = new XMLHttpRequest()
+    req.open('GET', requestURL)
+    req.responseType = 'json'
+    req.send()
+
+    req.onload = () => {
+      const res = req.response
+      dispatch(currencyActions.setCurrencies(res.rates))
+    }
+  }, [dispatch])
 
   const routes = categories.map((c: Category) => {
     return (
