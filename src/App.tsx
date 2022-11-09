@@ -1,15 +1,15 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { State, Category } from './types/Types'
 import { currencyActions } from './store/currency-slice'
 import NavBar from './components/Layout/Navigation/NavBar'
-import { Switch, Route } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { State } from './types/Types'
-import { Category } from './types/Types'
 import ProductList from './components/Features/ProductList'
+import Overlay from './components/UI/Overlay/Overlay'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
+  const backdrop = useSelector((state: State) => state.currencies.show)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -29,6 +29,10 @@ function App() {
     }
   }, [dispatch])
 
+  const closeBackdrop = () => {
+    dispatch(currencyActions.toggleCurrencySelect())
+  }
+
   const routes = categories.map((c: Category) => {
     return (
       <Route key={c.id} path={`/${c.name}`}>
@@ -40,6 +44,7 @@ function App() {
   return (
     <div className='App'>
       <NavBar />
+      {backdrop && <Overlay onClose={closeBackdrop} />}
       <section className='container'>
         <Switch>{routes}</Switch>
       </section>
