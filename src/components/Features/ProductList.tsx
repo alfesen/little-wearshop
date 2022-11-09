@@ -7,12 +7,9 @@ const ProductList = ({category}: {category: Category} ) => {
 
   const {name, products} = category
 
-  console.log(products)
-  console.log(category)
-
   const productList = products.map(product => {
     const {id, name, price, images} = product
-    return <ProductListItem id={id} name={name} price={price} image={images[0]}/>
+    return <ProductListItem key={`${id}__product_key`} id={id} name={name} price={price} image={images[0]}/>
   })
 
   return (

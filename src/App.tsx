@@ -11,7 +11,7 @@ function App() {
   const routes = categories.map((c: Category) => {
     return (
       <Route key={c.id} path={`/${c.name}`}>
-        <ProductList category={c} />
+        <ProductList key={`${c.id}_category_key`} category={c} />
       </Route>
     )
   })
