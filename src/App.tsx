@@ -1,6 +1,5 @@
 import NavBar from './components/Layout/Navigation/NavBar'
 import { Switch, Route } from 'react-router-dom'
-// import {useDispatch} from 'react-redux'
 import { useSelector } from 'react-redux'
 import { State } from './types/Types'
 import { Category } from './types/Types'
