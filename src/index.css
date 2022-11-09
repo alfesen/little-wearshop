@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+}
+
 .container {
   margin: 0 auto;
   width: 80%;

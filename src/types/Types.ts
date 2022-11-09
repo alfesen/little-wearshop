@@ -20,8 +20,15 @@ export interface ProductState {
   categories: Category[],
   currency: string
 }
+export interface CurrencyState {
+  curs: string[],
+  rates: any,
+  show: boolean,
+  currencySymbol: string
+}
 
 export interface State {
   products: ProductState,
-  nav: Nav
+  nav: Nav,
+  currencies: CurrencyState
 }

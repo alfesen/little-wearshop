@@ -1,0 +1,33 @@
+.currency {
+  position: relative;
+  &__button {
+    appearance: none;
+    padding: 0.6em 1.2em;
+    background-color: #444;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+    margin-right: 1em;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: #666;
+    }
+  }
+  &__dropdown {
+    width: 100%;
+    position: absolute;
+    color: black;
+    top: 100%;
+    list-style: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    li {
+      padding: 0.6em 1.2em;
+      background-color: #fff;
+      cursor: pointer;
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+}

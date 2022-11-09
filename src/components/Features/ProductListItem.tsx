@@ -12,7 +12,7 @@ export type Props = {
 }
 
 const ProductListItem = (props: Props) => {
-  const currency = useSelector((state: State) => state.products.currency)
+  const currency = useSelector((state: State) => state.currencies.currencySymbol)
 
   return (
     <div id={props.id} className={s.product}>
