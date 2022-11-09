@@ -8,8 +8,8 @@ const ProductList = ({category}: {category: Category} ) => {
   const {name, products} = category
 
   const productList = products.map(product => {
-    const {id, name, price, images} = product
-    return <ProductListItem key={`${id}__product_key`} id={id} name={name} price={price} image={images[0]}/>
+    const {id, name, price, images, description} = product
+    return <ProductListItem key={`${id}__product_key`} description={description} id={id} name={name} price={price} image={images[0]}/>
   })
 
   return (
