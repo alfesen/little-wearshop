@@ -19,9 +19,12 @@ function App() {
     req.open('GET', requestURL)
     req.responseType = 'json'
     req.send()
-
     req.onload = () => {
       const res = req.response
+      const rates: any[] = []
+      for (const rate in res.rates) {
+        rates.push(rate)
+      }
       dispatch(currencyActions.setCurrencies(res.rates))
     }
   }, [dispatch])

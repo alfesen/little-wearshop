@@ -21,7 +21,8 @@ export interface ProductState {
   currency: string
 }
 export interface CurrencyState {
-  curs: any
+  curs: any,
+  show: boolean
 }
 
 export interface State {

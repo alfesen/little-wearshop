@@ -4,13 +4,17 @@ import { CurrencyState } from '../types/Types'
 const currencySlice = createSlice({
   name: 'currency',
   initialState: {
-    curs: {},
+    curs: [],
+    show: false
   } as CurrencyState,
   reducers: {
     setCurrencies(state, action) {
       const currencies = action.payload
       state.curs = currencies
     },
+    toggleCurrencySelect(state) {
+      state.show = !state.show
+    }
   },
 })
 
