@@ -17,6 +17,9 @@ const ProductListItem = (props: Props) => {
   return (
     <div id={props.id} className={s.product}>
       <div className={s.product__image}>
+        <div className={s['product__description--overlay']}>
+          <p>{props.description}</p>
+        </div>
         <img src={props.image} alt={props.name} />
       </div>
       <div className={s.product__description}>
