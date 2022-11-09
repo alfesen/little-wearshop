@@ -9,14 +9,19 @@
     width: 100%;
     margin-bottom: 1em;
     overflow: hidden;
+    transition: scale .3s;
     img {
       height: 250px;
       width: 100%;
       object-fit: cover;
+      transition: scale .8s;
     }
     &:hover {
       .product__description--overlay {
         translate: 0;
+      }
+      img {
+        scale: 1.1
       }
     }
   }
@@ -41,7 +46,8 @@
       padding: 2em;
       background-color:#000000dd;
       color: #fff;
-      transition: translate .3s
+      transition: translate .3s;
+      z-index: 5;
     }
   }
   &__button {
