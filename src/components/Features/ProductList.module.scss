@@ -1,0 +1,10 @@
+.category__name {
+  text-transform: uppercase;
+  margin: 2em 0;
+}
+
+.product__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

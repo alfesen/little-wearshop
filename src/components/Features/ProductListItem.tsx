@@ -1,14 +1,14 @@
-import s from './ProductItem.module.scss'
+import s from './ProductListItem.module.scss'
 import CartButton from '../UI/CartButton/CartButton'
 import { State } from '../../types/Types'
 import { useSelector } from 'react-redux'
 
 export type Props = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
+  id: string
+  name: string
+  description?: string
+  price: number
+  image: string
 }
 
 const ProductListItem = (props: Props) => {

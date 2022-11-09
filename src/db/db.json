@@ -219,6 +219,7 @@
           "id": "tp1",
           "name": "PrairieDog Mic",
           "description": "Want to sing Hatfield style? PrairieDog mic is for you!",
+          "price": 300.99,
           "images": [
             "https://pixabay.com/images/download/prairie-dog-1470659_640.jpg",
             "https://pixabay.com/images/download/prairie-dog-1470659_640.jpg",
@@ -230,6 +231,7 @@
           "id": "tp2",
           "name": "Froggy Headset",
           "description": "Remember Crazy Frog? You may be crazy frog too!",
+          "price": 23.79,
           "images": [
             "https://pixabay.com/images/download/frogs-903221_640.jpg",
             "https://pixabay.com/images/download/frogs-903221_640.jpg",
@@ -241,6 +243,7 @@
           "id": "tp3",
           "name": "Monkey Music",
           "description": "Go wild with your new monkey stratocaster!",
+          "price": 680,
           "images": [
             "https://pixabay.com/images/download/monkey-3507317_640.jpg",
             "https://pixabay.com/images/download/monkey-3507317_640.jpg",

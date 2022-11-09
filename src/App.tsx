@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { State } from './types/Types'
 import { Category } from './types/Types'
+import ProductList from './components/Features/ProductList'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
@@ -10,7 +11,7 @@ function App() {
   const routes = categories.map((c: Category) => {
     return (
       <Route key={c.id} path={`/${c.name}`}>
-        <h2>{c.name}</h2>
+        <ProductList category={c} />
       </Route>
     )
   })
