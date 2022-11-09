@@ -13,11 +13,6 @@ const CurrencySelect = () => {
 
   const dispatch = useDispatch()
 
-  const currencyAbbreviations: string[] = []
-
-  for (const currency in currencies) {
-    currencyAbbreviations.push(currency)
-  }
 
   const toggleSelect = () => {
     dispatch(currencyActions.toggleCurrencySelect())
@@ -28,7 +23,7 @@ const CurrencySelect = () => {
     toggleSelect()
   }
 
-  const options = currencyAbbreviations.map(c => (
+  const options = currencies.map(c => (
     <li value={c} key={`${c}_option_key`} onClick={handleSelectCurrency}>
       {c}
     </li>

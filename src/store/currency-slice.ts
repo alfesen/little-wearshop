@@ -5,16 +5,19 @@ const currencySlice = createSlice({
   name: 'currency',
   initialState: {
     curs: [],
-    show: false
+    rates: {},
+    show: false,
+    currencySymbol: '$',
   } as CurrencyState,
   reducers: {
     setCurrencies(state, action) {
-      const currencies = action.payload
-      state.curs = currencies
+      const payload = action.payload
+      state.rates = payload.rates
+      state.curs = payload.currencies
     },
     toggleCurrencySelect(state) {
       state.show = !state.show
-    }
+    },
   },
 })
 

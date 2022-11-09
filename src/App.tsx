@@ -25,7 +25,10 @@ function App() {
       for (const rate in res.rates) {
         rates.push(rate)
       }
-      dispatch(currencyActions.setCurrencies(res.rates))
+      dispatch(
+        currencyActions.setCurrencies({ rates: res.rates, currencies: rates })
+      )
+      
     }
   }, [dispatch])
 
