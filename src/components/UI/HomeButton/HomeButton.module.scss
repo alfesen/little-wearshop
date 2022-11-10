@@ -1,0 +1,28 @@
+.home__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  padding: 2rem;
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  background-color: gold;
+  transition: scale 0.2s;
+  img {
+    position: absolute;
+  }
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+@media (max-width: 768px) {
+  .home__button {
+    position: absolute;
+    top: 6em;
+  }
+}

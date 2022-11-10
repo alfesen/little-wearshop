@@ -1,10 +1,11 @@
-import { useEffect, lazy , Suspense} from 'react'
+import { useEffect, lazy, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { State, Category } from './types/Types'
 import { currencyActions } from './store/currency-slice'
 import NavBar from './components/Layout/Navigation/NavBar'
 import Overlay from './components/UI/Overlay/Overlay'
+import HomeButton from './components/UI/HomeButton/HomeButton'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
@@ -30,7 +31,6 @@ function App() {
       dispatch(
         currencyActions.setCurrencies({ rates: res.rates, currencies: rates })
       )
-      
     }
   }, [dispatch])
 
@@ -48,15 +48,20 @@ function App() {
 
   return (
     <div className='App'>
+      
       <NavBar />
       {backdrop && <Overlay onClose={closeBackdrop} />}
+      <HomeButton />
       <section className='container'>
-        <Suspense >
-
-        <Switch>
-          <Route exact path='/'><Redirect to='/home' /></Route>
-          <Route path='/home'><Home /></Route>
-          {routes}
+        <Suspense>
+          <Switch>
+            <Route exact path='/'>
+              <Redirect to='/home' />
+            </Route>
+            <Route path='/home'>
+              <Home />
+            </Route>
+            {routes}
           </Switch>
         </Suspense>
       </section>
