@@ -12,43 +12,48 @@ export type Props = {
 }
 
 const ProductListItem = (props: Props) => {
-  const currency = useSelector((state: State) => state.currencies.currencySymbol)
+  const currency = useSelector(
+    (state: State) => state.currencies.currencySymbol
+  )
   const rates = useSelector((state: State) => state.currencies.rates)
 
-  let price: string
+  const { id, name, description, price, image } = props
 
-    switch (currency) {
-      case '$':
-        price = props.price.toFixed(2)
+  let priceInExchange: string
+
+  switch (currency) {
+    case '$':
+      priceInExchange = price.toFixed(2)
       break
-      case 'Є':
-        price = (props.price * rates.EUR).toFixed(2)
-        break
-      case '£':
-        price = (props.price * rates.GBP).toFixed(2)
-        break
-      case '¥':
-        price = (props.price * rates.JPY).toFixed(2)
-        break
-      case '₽':
-        price = (props.price * rates.RUB).toFixed(2)
-        break
-      default: price = props.price.toFixed(2)
-      }
+    case 'Є':
+      priceInExchange = (price * rates.EUR).toFixed(2)
+      break
+    case '£':
+      priceInExchange = (price * rates.GBP).toFixed(2)
+      break
+    case '¥':
+      priceInExchange = (price * rates.JPY).toFixed(2)
+      break
+    case '₽':
+      priceInExchange = (price * rates.RUB).toFixed(2)
+      break
+    default:
+      priceInExchange = price.toFixed(2)
+  }
 
   return (
-    <div id={props.id} className={s.product}>
+    <div id={id} className={s.product}>
       <div className={s.product__image}>
         <div className={s['product__description--overlay']}>
-          <p>{props.description}</p>
+          <p>{description}</p>
         </div>
-        <img src={props.image} alt={props.name} />
+        <img src={image} alt={name} />
       </div>
       <div className={s.product__description}>
         <CartButton className={s.product__button} />
-        <h4>{props.name}</h4>
+        <h4>{name}</h4>
         <span>
-          {currency} {price}
+          {currency} {priceInExchange}
         </span>
       </div>
     </div>
