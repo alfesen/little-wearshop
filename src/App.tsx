@@ -1,16 +1,18 @@
-import { useEffect } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { useEffect, lazy , Suspense} from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { State, Category } from './types/Types'
 import { currencyActions } from './store/currency-slice'
 import NavBar from './components/Layout/Navigation/NavBar'
-import ProductList from './components/Features/ProductList'
 import Overlay from './components/UI/Overlay/Overlay'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
   const backdrop = useSelector((state: State) => state.currencies.show)
   const dispatch = useDispatch()
+
+  const Home = lazy(() => import('./components/Home/Home'))
+  const ProductList = lazy(() => import('./components/Features/ProductList'))
 
   useEffect(() => {
     const requestURL =
@@ -49,7 +51,14 @@ function App() {
       <NavBar />
       {backdrop && <Overlay onClose={closeBackdrop} />}
       <section className='container'>
-        <Switch>{routes}</Switch>
+        <Suspense >
+
+        <Switch>
+          <Route exact path='/'><Redirect to='/home' /></Route>
+          <Route path='/home'><Home /></Route>
+          {routes}
+          </Switch>
+        </Suspense>
       </section>
     </div>
   )
