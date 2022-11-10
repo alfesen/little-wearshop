@@ -13,6 +13,28 @@ export type Props = {
 
 const ProductListItem = (props: Props) => {
   const currency = useSelector((state: State) => state.currencies.currencySymbol)
+  const rates = useSelector((state: State) => state.currencies.rates)
+
+  let price: string
+
+    switch (currency) {
+      case '$':
+        price = props.price.toFixed(2)
+      break
+      case 'Є':
+        price = (props.price * rates.EUR).toFixed(2)
+        break
+      case '£':
+        price = (props.price * rates.GBP).toFixed(2)
+        break
+      case '¥':
+        price = (props.price * rates.JPY).toFixed(2)
+        break
+      case '₽':
+        price = (props.price * rates.RUB).toFixed(2)
+        break
+      default: price = props.price.toFixed(2)
+      }
 
   return (
     <div id={props.id} className={s.product}>
@@ -26,7 +48,7 @@ const ProductListItem = (props: Props) => {
         <CartButton className={s.product__button} />
         <h4>{props.name}</h4>
         <span>
-          {currency} {props.price}
+          {currency} {price}
         </span>
       </div>
     </div>
