@@ -7,7 +7,7 @@ const currencySlice = createSlice({
     curs: [],
     rates: {},
     show: false,
-    currencySymbol: '$',
+    currencySymbol: '$'
   } as CurrencyState,
   reducers: {
     setCurrencies(state, action) {
@@ -18,6 +18,31 @@ const currencySlice = createSlice({
     toggleCurrencySelect(state) {
       state.show = !state.show
     },
+    changeCurrency(state, action) {
+      const payload = action.payload
+      console.log(payload)
+      switch (payload) {
+        case 'USD':
+          state.currencySymbol = '$'
+          break
+        case 'EUR':
+          state.currencySymbol = 'Є' 
+          break
+        case 'GBP':
+          state.currencySymbol = '£'
+          break
+        case 'JPY':
+          state.currencySymbol = '¥'
+          break
+        case 'RUB':
+          state.currencySymbol = '₽'
+          break
+        case 'PLN':
+          state.currencySymbol = 'Zł'
+          break
+        default: state.currencySymbol = '$'
+      }
+    }
   },
 })
 

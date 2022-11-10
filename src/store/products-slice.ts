@@ -7,12 +7,7 @@ const productsSlice = createSlice({
   initialState: {
     categories: db.categories as Category[],
   } as ProductState,
-  reducers: {
-    console(state) {
-    },
-  },
+  reducers: {},
 })
-
-export const productsActions = productsSlice.actions
 
 export default productsSlice

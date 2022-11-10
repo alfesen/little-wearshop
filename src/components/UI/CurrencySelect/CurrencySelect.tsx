@@ -21,6 +21,7 @@ const CurrencySelect = () => {
   const handleSelectCurrency = (event: any) => {
     setSelectedCurrency(event.target.textContent)
     toggleSelect()
+    dispatch(currencyActions.changeCurrency(event.target.textContent))
   }
 
   const options = currencies.map(c => (

@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const requestURL =
-      'https://api.exchangerate.host/latest?base=USD&symbols=EUR,GBP,RUB,JPY'
+      'https://api.exchangerate.host/latest?base=USD&symbols=EUR,USD,GBP,RUB,JPY,PLN'
     const req = new XMLHttpRequest()
     req.open('GET', requestURL)
     req.responseType = 'json'
