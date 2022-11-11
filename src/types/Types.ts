@@ -17,7 +17,7 @@ export type Category = {
 }
 
 export type CartItem = {
-  title: string
+  name: string
   amount: number
   price: number
 }
