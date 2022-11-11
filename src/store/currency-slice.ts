@@ -15,8 +15,11 @@ const currencySlice = createSlice({
       state.rates = payload.rates
       state.curs = payload.currencies
     },
-    toggleCurrencySelect(state) {
-      state.show = !state.show
+    openSelect(state) {
+      state.show = true
+    },
+    closeSelect(state) {
+      state.show = false
     },
     changeCurrency(state, action) {
       const payload = action.payload

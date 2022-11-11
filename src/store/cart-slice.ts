@@ -7,8 +7,11 @@ const cartSlice = createSlice({
     show: false
   },
   reducers: {
-    toggleCart(state) {
-      state.show = !state.show
+    openCart(state) {
+      state.show = true
+    },
+    closeCart(state) {
+      state.show = false
     }
   }
 })

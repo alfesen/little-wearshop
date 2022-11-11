@@ -27,6 +27,10 @@ export interface ProductState {
   products: Product[]
 }
 
+export interface BackdropState {
+  backdrop: boolean
+}
+
 export interface Rates {
   USD: number
   EUR: number
@@ -52,5 +56,6 @@ export interface State {
   products: ProductState
   nav: Nav
   currencies: CurrencyState
-  cart: CartState
+  cart: CartState,
+  backdrop: BackdropState
 }
