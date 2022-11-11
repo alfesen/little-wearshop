@@ -9,24 +9,34 @@
     width: 100%;
     margin-bottom: 1em;
     overflow: hidden;
-    transition: scale .3s;
+    transition: scale 0.3s;
     img {
       height: 250px;
       width: 100%;
       object-fit: cover;
-      transition: scale .8s;
+      transition: scale 0.8s;
     }
     &:hover {
       .product__description--overlay {
         translate: 0;
       }
       img {
-        scale: 1.1
+        scale: 1.1;
       }
     }
   }
   &__description {
     position: relative;
+    a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin-bottom: 0.2em;
+      color: black;
+      &:hover {
+        color: #333;
+      }
+    }
     h4 {
       margin-bottom: 0.5em;
     }
@@ -44,9 +54,9 @@
       height: 100%;
       width: 100%;
       padding: 2em;
-      background-color:#000000dd;
+      background-color: #000000dd;
       color: #fff;
-      transition: translate .3s;
+      transition: translate 0.3s;
       z-index: 5;
     }
   }

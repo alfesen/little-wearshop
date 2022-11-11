@@ -1,0 +1,12 @@
+.go__back {
+  margin-top: 1.5em;
+  padding: 0.6em 1em;
+  font-size: 1.2em;
+  border: none;
+  background-color: gold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: #e0b803;
+  }
+}

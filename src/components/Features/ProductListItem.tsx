@@ -1,7 +1,9 @@
 import s from './ProductListItem.module.scss'
-import CartButton from '../UI/CartButton/CartButton'
-import { State } from '../../types/Types'
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { State } from '../../types/Types'
+import { exchange } from '../../helpers/exchange'
+import CartButton from '../UI/CartButton/CartButton'
 
 export type Props = {
   id: string
@@ -19,27 +21,7 @@ const ProductListItem = (props: Props) => {
 
   const { id, name, description, price, image } = props
 
-  let priceInExchange: string
-
-  switch (currency) {
-    case '$':
-      priceInExchange = price.toFixed(2)
-      break
-    case 'Є':
-      priceInExchange = (price * rates.EUR).toFixed(2)
-      break
-    case '£':
-      priceInExchange = (price * rates.GBP).toFixed(2)
-      break
-    case '¥':
-      priceInExchange = (price * rates.JPY).toFixed(2)
-      break
-    case '₽':
-      priceInExchange = (price * rates.RUB).toFixed(2)
-      break
-    default:
-      priceInExchange = price.toFixed(2)
-  }
+  const priceInExchange = exchange(currency, price, rates)
 
   return (
     <div id={id} className={s.product}>
@@ -51,7 +33,7 @@ const ProductListItem = (props: Props) => {
       </div>
       <div className={s.product__description}>
         <CartButton className={s.product__button} />
-        <h4>{name}</h4>
+        <Link to={`/product/${id}`}>{name}</Link>
         <span>
           {currency} {priceInExchange}
         </span>

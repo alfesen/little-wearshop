@@ -3,11 +3,11 @@ export type Nav = {
 }
 
 export type Product = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  images: string[] | string;
+  id: string
+  name: string
+  description: string
+  price: number
+  images: string[]
 }
 
 export type Category = {
@@ -17,18 +17,28 @@ export type Category = {
 }
 
 export interface ProductState {
-  categories: Category[],
-  currency: string
+  categories: Category[]
+  products: Product[]
 }
+
+export interface Rates {
+  USD: number
+  EUR: number
+  GBP: number
+  JPY: number
+  PLN: number
+  RUB: number
+}
+
 export interface CurrencyState {
-  curs: string[],
-  rates: any,
-  show: boolean,
+  curs: string[]
+  rates: any
+  show: boolean
   currencySymbol: string
 }
 
 export interface State {
-  products: ProductState,
-  nav: Nav,
+  products: ProductState
+  nav: Nav
   currencies: CurrencyState
 }

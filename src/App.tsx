@@ -6,6 +6,7 @@ import { currencyActions } from './store/currency-slice'
 import NavBar from './components/Layout/Navigation/NavBar'
 import Overlay from './components/UI/Overlay/Overlay'
 import HomeButton from './components/UI/HomeButton/HomeButton'
+import ProductPage from './components/ProductPage/ProductPage'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
@@ -48,11 +49,10 @@ function App() {
 
   return (
     <div className='App'>
-      
       <NavBar />
       {backdrop && <Overlay onClose={closeBackdrop} />}
       <HomeButton />
-      <section className='container'>
+      <section className={`container`}>
         <Suspense>
           <Switch>
             <Route exact path='/'>
@@ -62,6 +62,9 @@ function App() {
               <Home />
             </Route>
             {routes}
+            <Route path='/product/:id'>
+              <ProductPage />
+            </Route>
           </Switch>
         </Suspense>
       </section>
