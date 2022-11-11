@@ -3,18 +3,13 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { State, Category } from './types/Types'
 import { currencyActions } from './store/currency-slice'
-import {backdropActions } from './store/backdrop-slice'
-import { cartActions } from './store/cart-slice'
 import NavBar from './components/Layout/Navigation/NavBar'
-import Overlay from './components/UI/Overlay/Overlay'
 import HomeButton from './components/UI/HomeButton/HomeButton'
 import ProductPage from './components/ProductPage/ProductPage'
 import NotFound from './components/UI/NotFound/NotFound'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
-  const currencyBackdrop = useSelector((state: State) => state.currencies.show)
-  const cartBackdrop = useSelector((state: State) => state.cart.show)
   const dispatch = useDispatch()
 
   const Home = lazy(() => import('./components/Home/Home'))
@@ -39,11 +34,6 @@ function App() {
     }
   }, [dispatch])
 
-  const closeBackdrop = () => {
-    dispatch(backdropActions.closeBackdrop())
-    dispatch(cartActions.closeCart())
-    dispatch(currencyActions.closeSelect())
-  }
 
   const routes = categories.map((c: Category) => {
     return (
@@ -56,7 +46,6 @@ function App() {
   return (
     <div className='App'>
       <NavBar />
-      {(currencyBackdrop || cartBackdrop) && <Overlay onClose={closeBackdrop} />}
       <HomeButton />
       <section className={`container`}>
         <Suspense>
