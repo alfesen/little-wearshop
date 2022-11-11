@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { State } from '../../types/Types'
 import GoBackButton from '../UI/GoBackButton/GoBackButton'
-import {exchange} from '../../helpers/exchange'
+import { exchange } from '../../helpers/exchange'
+import NotFound from '../UI/NotFound/NotFound'
 
 type Params = {
   id: string
@@ -18,10 +19,13 @@ const ProductPage = () => {
   const currency = useSelector(
     (state: State) => state.currencies.currencySymbol
   )
+
   const prod = products.find(product => product.id === id)
+  if (!prod) return <NotFound />
+
   const { id: prodId, price, images, description, name } = prod!
 
-  const priceInExchange = exchange(currency, price ,rates)
+  const priceInExchange = exchange(currency, price, rates)
 
   const prodImages = images.map((image: string, index: number) => {
     return (
@@ -42,6 +46,7 @@ const ProductPage = () => {
   return (
     <Fragment>
       <GoBackButton />
+
       <section className={s.product}>
         <div className={s.product__gallery}>
           <div className={s.product__gallery_sidebar}>{prodImages}</div>
