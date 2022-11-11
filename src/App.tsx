@@ -7,6 +7,7 @@ import NavBar from './components/Layout/Navigation/NavBar'
 import Overlay from './components/UI/Overlay/Overlay'
 import HomeButton from './components/UI/HomeButton/HomeButton'
 import ProductPage from './components/ProductPage/ProductPage'
+import NotFound from './components/UI/NotFound/NotFound'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
@@ -65,6 +66,7 @@ function App() {
             <Route path='/product/:id'>
               <ProductPage />
             </Route>
+            <Route path ='*' exact={true}><NotFound /></Route>
           </Switch>
         </Suspense>
       </section>
