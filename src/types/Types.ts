@@ -16,9 +16,19 @@ export type Category = {
   products: Product[]
 }
 
+export type CartItem = {
+  title: string
+  amount: number
+  price: number
+}
+
 export interface ProductState {
   categories: Category[]
   products: Product[]
+}
+
+export interface BackdropState {
+  backdrop: boolean
 }
 
 export interface Rates {
@@ -37,8 +47,15 @@ export interface CurrencyState {
   currencySymbol: string
 }
 
+export interface CartState {
+  cartItems: CartItem[],
+  show: boolean
+}
+
 export interface State {
   products: ProductState
   nav: Nav
   currencies: CurrencyState
+  cart: CartState,
+  backdrop: BackdropState
 }

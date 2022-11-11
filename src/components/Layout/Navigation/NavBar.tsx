@@ -1,8 +1,8 @@
 import s from './NavBar.module.scss'
 import NavBarLinks from './NavBarLinks/NavBarLinks'
 import Logo from './Logo/Logo'
-import CartButton from '../../UI/CartButton/CartButton'
 import CurrencySelect from '../../UI/CurrencySelect/CurrencySelect'
+import CartDropdown from '../../Features/CartDropdown'
 
 const NavBar = () => {
   return (
@@ -12,7 +12,7 @@ const NavBar = () => {
         <Logo className={s.logo} />
         <div className={s.tooltip}>
           <CurrencySelect />
-          <CartButton />
+          <CartDropdown />
         </div>
       </div>
     </nav>
