@@ -6,9 +6,32 @@
   padding: 0.5em;
   border-bottom: 1px solid #333;
 
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    * {
+      margin-bottom: .2em;
+    }
+  }
+
   a {
     text-decoration: none;
     color: #333;
     font-size: 1.5rem;
+  }
+
+  button {
+    appearance: none;
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    background-color: gold;
+    font-size: .6rem;
+    cursor: pointer;
+    &:hover {
+      background-color: #987c00;
+    }
   }
 }
