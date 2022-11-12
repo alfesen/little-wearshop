@@ -3,7 +3,7 @@ import { CartItem as CartItemType } from '../../types/Types'
 
 const CartItem = (props: CartItemType) => {
   return (
-    <div className={s.item}>
+    <div id={props.id} className={s.item}>
       <h4>{props.name}</h4>
       <div>
         <p>
