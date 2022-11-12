@@ -17,6 +17,7 @@ export type Category = {
 }
 
 export type CartItem = {
+  id: string
   name: string
   amount: number
   price: number

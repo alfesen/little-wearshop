@@ -5,42 +5,60 @@ import { cartActions } from '../../store/cart-slice'
 import { backdropActions } from '../../store/backdrop-slice'
 import { currencyActions } from '../../store/currency-slice'
 import Overlay from '../UI/Overlay/Overlay'
-import { State } from '../../types/Types'
+import { State, CartItem as CartItemType } from '../../types/Types'
 import CartItem from './CartItem'
 
 const CartDropdown = () => {
-  
-  const currencyBackdrop = useSelector((state: State) => state.currencies.show)
-  const cartBackdrop = useSelector((state: State) => state.cart.show)
-  const show = useSelector((state: State) => state.cart.show)
-  const currencySelect = useSelector((state: State) => state.currencies.show)
+  const state = {
+    curBackdrop: useSelector((state: State) => state.currencies.show),
+    showCart: useSelector((state: State) => state.cart.show),
+    cartItems: useSelector((state: State) => state.cart.cartItems),
+  }
+
+  const { curBackdrop, showCart, cartItems } = state
 
   const dispatch = useDispatch()
 
   const toggleCart = () => {
-    show ? dispatch(cartActions.closeCart()) : dispatch(cartActions.openCart())
-    currencySelect && dispatch(currencyActions.closeSelect())
+    showCart
+      ? dispatch(cartActions.closeCart())
+      : dispatch(cartActions.openCart())
+    curBackdrop && dispatch(currencyActions.closeSelect())
   }
 
-  
   const closeBackdrop = () => {
     dispatch(backdropActions.closeBackdrop())
     dispatch(cartActions.closeCart())
     dispatch(currencyActions.closeSelect())
   }
 
+  const renderCartItems = cartItems && cartItems.length > 0? (
+    cartItems.map((item: CartItemType) => {
+      return (
+        <CartItem
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          price={item.price}
+          amount={item.amount}
+        />
+      )
+    })
+  ) : (
+    <div>Cart is Empty</div>
+  )
+
   return (
     <div className={s.cart}>
-      {(currencyBackdrop || cartBackdrop) && <Overlay onClose={closeBackdrop} />}
+      {(state.curBackdrop || showCart) && <Overlay onClose={closeBackdrop} />}
       <CartButton onClick={toggleCart} />
 
-      {show && (
+      {showCart && (
         <div className={s.cart__dropdown}>
-          <CartItem name='name' amount={3} price={38.99} />
-          <CartItem name='Jeans' amount={1} price={22.99} />
+          {renderCartItems}
           <div className={s.cart__actions}>
             <button>To cart</button>
-            <button>Close</button>
+            <button onClick={closeBackdrop}>Close</button>
           </div>
         </div>
       )}

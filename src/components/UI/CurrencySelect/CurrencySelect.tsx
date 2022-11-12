@@ -7,20 +7,22 @@ import { cartActions } from '../../../store/cart-slice'
 
 const CurrencySelect = () => {
   const [selectedCurrency, setSelectedCurrency] = useState('USD')
-  const currencies = useSelector((state: State) => state.currencies.curs)
-  const showCurrencySelect = useSelector(
-    (state: State) => state.currencies.show
-  )
-  const showCart = useSelector(
-    (state: State) => state.cart.show
-  )
+
+  const state = {
+    currencies: useSelector((state: State) => state.currencies.curs),
+    showCurrencySelect: useSelector((state: State) => state.currencies.show),
+    showCart: useSelector((state: State) => state.cart.show),
+  }
+
+  const {currencies, showCurrencySelect, showCart} = state
 
   const dispatch = useDispatch()
 
-
   const toggleSelect = () => {
-   showCurrencySelect ? dispatch(currencyActions.closeSelect()) : dispatch(currencyActions.openSelect())
-   showCart && dispatch(cartActions.closeCart())
+    showCurrencySelect
+      ? dispatch(currencyActions.closeSelect())
+      : dispatch(currencyActions.openSelect())
+    showCart && dispatch(cartActions.closeCart())
   }
 
   const handleSelectCurrency = (event: any) => {

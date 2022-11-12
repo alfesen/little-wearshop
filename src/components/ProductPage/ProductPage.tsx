@@ -1,10 +1,11 @@
 import s from './ProductPage.module.scss'
-import { useState, Fragment } from 'react'
-import { useSelector } from 'react-redux'
+import { useState, Fragment, useRef } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { State } from '../../types/Types'
-import GoBackButton from '../UI/GoBackButton/GoBackButton'
 import { exchange } from '../../helpers/exchange'
+import { cartActions } from '../../store/cart-slice'
+import GoBackButton from '../UI/GoBackButton/GoBackButton'
 import NotFound from '../UI/NotFound/NotFound'
 
 type Params = {
@@ -14,11 +15,17 @@ type Params = {
 const ProductPage = () => {
   const [imageIndex, setImageIndex] = useState(0)
   const { id } = useParams<Params>()
-  const products = useSelector((state: State) => state.products.products)
-  const rates = useSelector((state: State) => state.currencies.rates)
-  const currency = useSelector(
-    (state: State) => state.currencies.currencySymbol
-  )
+
+  const state = {
+    products: useSelector((state: State) => state.products.products),
+    rates: useSelector((state: State) => state.currencies.rates),
+    currency: useSelector((state: State) => state.currencies.currencySymbol),
+  }
+
+  const { products, rates, currency } = state
+
+  const amountRef = useRef<HTMLInputElement>(null)
+  const dispatch = useDispatch()
 
   const prod = products.find(product => product.id === id)
   if (!prod) return <NotFound />
@@ -42,6 +49,21 @@ const ProductPage = () => {
       </div>
     )
   })
+
+  const addProductToCart = () => {
+    let amount = 1
+    if (amountRef.current != null && amountRef.current.value !== '') {
+      amount = parseInt(amountRef.current.value)
+    }
+    const product = {
+      id: prodId,
+      name: name,
+      amount: amount,
+      price: price * amount,
+    }
+
+    dispatch(cartActions.addProductToCart(product))
+  }
 
   return (
     <Fragment>
@@ -72,13 +94,17 @@ const ProductPage = () => {
             <div>
               <label htmlFor='amount'>Amount:</label>&nbsp;
               <input
+                ref={amountRef}
                 min={1}
                 max={10}
                 type='number'
+                placeholder='1'
                 id='amount'
                 className={s.amount__input}></input>
             </div>
-            <button className={s.cart__button}>Add to Cart</button>
+            <button className={s.cart__button} onClick={addProductToCart}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </section>
