@@ -3,6 +3,7 @@ import { CartItem as CartItemType } from '../../types/Types'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { cartActions } from '../../store/cart-slice'
+import BasicButton from '../UI/BasicButton/BasicButton'
 
 const CartItem = (props: CartItemType) => {
   const { id, name, amount, price } = props
@@ -23,7 +24,11 @@ const CartItem = (props: CartItemType) => {
         <p>
           Price: <span>$ {price}</span>
         </p>
-        <button onClick={() => dispatch(cartActions.removeProductFromCart(id))}className={s.remove}>Remove</button>
+        <BasicButton
+          onClick={() => dispatch(cartActions.removeProductFromCart(id))}
+          className={s.remove}>
+          Remove
+        </BasicButton>
       </div>
     </div>
   )

@@ -1,0 +1,11 @@
+.button {
+  appearance: none;
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  background-color: gold;
+  cursor: pointer;
+  &:hover {
+    background-color: #987c00;
+  }
+}
