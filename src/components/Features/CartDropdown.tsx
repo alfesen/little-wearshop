@@ -32,21 +32,22 @@ const CartDropdown = () => {
     dispatch(currencyActions.closeSelect())
   }
 
-  const renderCartItems = cartItems && cartItems.length > 0? (
-    cartItems.map((item: CartItemType) => {
-      return (
-        <CartItem
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          price={item.price}
-          amount={item.amount}
-        />
-      )
-    })
-  ) : (
-    <div>Cart is Empty</div>
-  )
+  const renderCartItems =
+    cartItems && cartItems.length > 0 ? (
+      cartItems.map((item: CartItemType) => {
+        return (
+          <CartItem
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            price={item.price}
+            amount={item.amount}
+          />
+        )
+      })
+    ) : (
+      <div>Cart is Empty</div>
+    )
 
   return (
     <div className={s.cart}>

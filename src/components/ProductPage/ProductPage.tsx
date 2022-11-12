@@ -7,6 +7,7 @@ import { exchange } from '../../helpers/exchange'
 import { cartActions } from '../../store/cart-slice'
 import GoBackButton from '../UI/GoBackButton/GoBackButton'
 import NotFound from '../UI/NotFound/NotFound'
+import BasicButton from '../UI/BasicButton/BasicButton'
 
 type Params = {
   id: string
@@ -102,9 +103,9 @@ const ProductPage = () => {
                 id='amount'
                 className={s.amount__input}></input>
             </div>
-            <button className={s.cart__button} onClick={addProductToCart}>
+            <BasicButton className={s.cart__button} onClick={addProductToCart}>
               Add to Cart
-            </button>
+            </BasicButton>
           </div>
         </div>
       </section>
