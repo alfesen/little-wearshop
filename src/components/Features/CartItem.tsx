@@ -1,14 +1,25 @@
 import s from './CartItem.module.scss'
-import { CartItem as CartItemType } from '../../types/Types'
+import { CartItem as CartItemType, State } from '../../types/Types'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import {useSelector, useDispatch } from 'react-redux'
 import { cartActions } from '../../store/cart-slice'
 import BasicButton from '../UI/BasicButton/BasicButton'
 
+import { exchange } from '../../helpers/exchange'
+
 const CartItem = (props: CartItemType) => {
   const { id, name, amount, price } = props
+  
+  const state = {
+    currency: useSelector((state: State) => state.currencies.currencySymbol),
+    rates: useSelector((state: State) => state.currencies.rates)
+  }
+
+  const {currency, rates} = state
 
   const dispatch = useDispatch()
+
+  const priceInExchange = exchange(currency, price, rates)
 
   return (
     <div id={id} className={s.item}>
@@ -22,7 +33,7 @@ const CartItem = (props: CartItemType) => {
           Amount: <span>{amount}</span>
         </p>
         <p>
-          Price: <span>$ {price}</span>
+          Price: <span>{currency}&nbsp;{priceInExchange}</span>
         </p>
         <BasicButton
           onClick={() => dispatch(cartActions.removeProductFromCart(id))}
