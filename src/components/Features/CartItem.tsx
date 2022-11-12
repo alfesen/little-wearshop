@@ -16,13 +16,14 @@ const CartItem = (props: CartItemType) => {
         onClick={() => dispatch(cartActions.closeCart())}>
         {name}
       </Link>
-      <div>
+      <div className={s.item__description}>
         <p>
           Amount: <span>{amount}</span>
         </p>
         <p>
           Price: <span>$ {price}</span>
         </p>
+        <button onClick={() => dispatch(cartActions.removeProductFromCart(id))}className={s.remove}>Remove</button>
       </div>
     </div>
   )
