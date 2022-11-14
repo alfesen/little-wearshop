@@ -50,7 +50,8 @@ export interface CurrencyState {
 
 export interface CartState {
   cartItems: CartItem[],
-  show: boolean
+  show: boolean,
+  totalAmount: number
 }
 
 export interface State {
