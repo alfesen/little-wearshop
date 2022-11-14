@@ -71,3 +71,42 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+    &__gallery {
+      flex-direction: column-reverse;
+      margin-bottom: 2em;
+      &_sidebar {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        gap: 1em;
+      }
+    }
+
+    &__description {
+      margin: 0;
+      &_header {
+        padding: 1em 0;
+        border-radius: 0;
+        margin-bottom: 2em;
+        align-items: flex-start;
+      }
+      p {
+        margin-bottom: 2em;
+      }
+    }
+    &__tooltip {
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+      .amount__input {
+        margin: 0;
+      }
+    }
+  }
+}
