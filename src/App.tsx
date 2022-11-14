@@ -7,6 +7,7 @@ import NavBar from './components/Layout/Navigation/NavBar'
 import HomeButton from './components/UI/HomeButton/HomeButton'
 import ProductPage from './components/ProductPage/ProductPage'
 import NotFound from './components/UI/NotFound/NotFound'
+import Checkout from './components/CheckoutPage/CheckoutPage'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
@@ -59,6 +60,9 @@ function App() {
             {routes}
             <Route path='/product/:id'>
               <ProductPage />
+            </Route>
+            <Route path='/checkout'>
+              <Checkout />
             </Route>
             <Route path ='*' exact={true}><NotFound /></Route>
           </Switch>

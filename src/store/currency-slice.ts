@@ -23,7 +23,6 @@ const currencySlice = createSlice({
     },
     changeCurrency(state, action) {
       const payload = action.payload
-      console.log(payload)
       switch (payload) {
         case 'USD':
           state.currencySymbol = '$'

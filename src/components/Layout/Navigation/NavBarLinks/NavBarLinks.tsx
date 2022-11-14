@@ -50,7 +50,7 @@ const NavBarLinks = () => {
 
   return (
     <Fragment>
-      {burgerVisible && <button onClick={handleNav}>{burger}</button>}
+      {burgerVisible && <button onClick={handleNav} className={s.burger}>{burger}</button>}
       <div className={`${s.nav__links} ${showNav && s.dropdown}`}>
         {navLinks}
       </div>

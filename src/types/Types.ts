@@ -21,6 +21,10 @@ export type CartItem = {
   name: string
   amount: number
   price: number
+  description?: string
+  image?: string
+  onAdd: () => void
+  onRemove: () => void
 }
 
 export interface ProductState {
@@ -49,8 +53,8 @@ export interface CurrencyState {
 }
 
 export interface CartState {
-  cartItems: CartItem[],
-  show: boolean,
+  cartItems: CartItem[]
+  show: boolean
   totalAmount: number
 }
 
@@ -58,6 +62,12 @@ export interface State {
   products: ProductState
   nav: Nav
   currencies: CurrencyState
-  cart: CartState,
+  cart: CartState
   backdrop: BackdropState
+}
+
+export type Order = {
+  items: CartItem[]
+  totalAmount: string
+  currencySymbol: string
 }

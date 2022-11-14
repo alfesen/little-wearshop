@@ -6,7 +6,21 @@
   padding: 0.5em;
   border-bottom: 1px solid #333;
 
-  &__description {
+  .header {
+    display: flex;
+    text-align: center;
+    &__image {
+      width: 6rem;
+      margin-right: 0.5em;
+    }
+    &__controls {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__details {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,7 +28,11 @@
     * {
       margin-bottom: 0.2em;
     }
-    .item__description_amount {
+
+    &.checkout {
+      font-size: 1.2rem;
+    }
+    &_amount {
       margin: 0;
       &_controls {
         display: inline;
@@ -23,6 +41,8 @@
         button {
           appearance: none;
           background-color: #eee;
+          text-align: center;
+          width: 2rem;
           border: none;
           padding: 0.5em;
           cursor: pointer;
@@ -35,6 +55,13 @@
         }
       }
     }
+  }
+
+  &__description {
+    margin: 0.5em;
+    padding: 1em 0.5em;
+
+    background-color: #ddd;
   }
 
   a {
@@ -53,11 +80,16 @@
   .item {
     flex-direction: column;
     align-items: flex-start;
-    &__link {
-      margin-bottom: 1em;
-    }
-    &__description {
+    &__details {
+      margin-top: 1em;
       align-items: flex-start;
+    }
+    button {
+      font-size: 0.8em;
+    }
+
+    .remove {
+      font-size: 0.7rem;
     }
   }
 }

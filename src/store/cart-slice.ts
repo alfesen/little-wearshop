@@ -25,8 +25,8 @@ const cartSlice = createSlice({
         state.cartItems.push(product)
       }
       if (existingProduct) {
-        existingProduct.amount = existingProduct.amount + product.amount
-        existingProduct.price = existingProduct.price + product.price
+        existingProduct.amount += product.amount
+        existingProduct.price += product.price
       }
     },
     removeProductFromCart(state, action) {
@@ -36,45 +36,43 @@ const cartSlice = createSlice({
       )
       if (existingProduct) {
         state.cartItems = state.cartItems.filter(item => item.id !== productId)
-        state.totalAmount = state.totalAmount - existingProduct.price
+        state.totalAmount -= existingProduct.price
       }
       if (state.cartItems.length === 0) {
         state.totalAmount = 0
       }
     },
     addOne(state, action) {
-      const productId = action.payload
+      const product = action.payload
       const existingProduct = state.cartItems.find(
-        item => item.id === productId
+        item => item.id === product.id
       )
       if (existingProduct) {
-        state.totalAmount =
-          state.totalAmount + existingProduct.price / existingProduct.amount
         existingProduct.amount += 1
-        existingProduct.price =
-          existingProduct.price + existingProduct.price / existingProduct.amount
+        existingProduct.price += product.price
+        state.totalAmount += product.price
       }
     },
-
     removeOne(state, action) {
-      const productId = action.payload
+      const product = action.payload
       const existingProduct = state.cartItems.find(
-        item => item.id === productId
+        item => item.id === product.id
       )
       if (existingProduct && existingProduct.amount > 0) {
         existingProduct.amount -= 1
-        existingProduct.price =
-          existingProduct.price -
-          existingProduct.price / (existingProduct.amount + 1)
+        existingProduct.price -= product.price
+        state.totalAmount -= product.price
+        if (existingProduct.amount === 0) {
+          state.cartItems = state.cartItems.filter(
+            item => item.id !== existingProduct.id
+          )
+        }
+      }
+    },
 
-        state.totalAmount =
-          state.totalAmount -
-          existingProduct.price / (existingProduct.amount)
-      }
-      if (existingProduct && existingProduct.amount === 0) {
-        state.cartItems = state.cartItems.filter(item => item.id !== productId)
-        state.totalAmount = 0
-      }
+    placeOrder(state) {
+      state.cartItems = []
+      state.totalAmount = 0
     },
   },
 })
