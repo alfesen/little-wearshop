@@ -61,8 +61,9 @@ const ProductPage = () => {
       name: name,
       amount: amount,
       price: price * amount,
+      image: images[0],
+      description: description,
     }
-
     dispatch(cartActions.addProductToCart(product))
   }
 

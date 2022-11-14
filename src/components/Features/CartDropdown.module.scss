@@ -3,6 +3,10 @@
   max-height: 20rem;
   z-index: 120;
 
+  &__empty {
+    text-align: center;
+  }
+
   &__dropdown {
     position: absolute;
     background-color: #fff;
@@ -17,9 +21,16 @@
   &__actions {
     display: flex;
     justify-content: flex-end;
-    margin: 0.5em;
+    margin: 0.5em 0;
     padding: 0.5em;
 
+    &_close {
+      background-color: #ddd !important;
+      &:hover {
+        background-color: #bbb !important;
+      }
+    }
+    
     button {
       appearance: none;
       border: none;
@@ -39,7 +50,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .cart {
     &__dropdown {
       width: 100vw;

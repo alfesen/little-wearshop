@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import {Category} from '../../types/Types'
 import ProductListItem from './ProductListItem'
 import s from './ProductList.module.scss'
+import Heading from '../UI/Heading/Heading'
 
 const ProductList = ({category}: {category: Category} ) => {
 
@@ -14,7 +15,7 @@ const ProductList = ({category}: {category: Category} ) => {
 
   return (
     <Fragment>
-      <h2 className={s.category__name}>{name}</h2>
+      <Heading heading={name} />
       <div className={s.product__list}>
       {productList}
       </div>
