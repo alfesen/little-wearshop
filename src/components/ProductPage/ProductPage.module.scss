@@ -1,6 +1,6 @@
 .product {
   display: flex;
-  margin-top: 3em;
+  margin: 3em 0;
   height: max-content;
   &__gallery {
     display: flex;
@@ -35,6 +35,7 @@
   }
   &__description {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
     width: 90%;
@@ -88,6 +89,7 @@
     }
 
     &__description {
+      width: 100%;
       margin: 0;
       &_header {
         padding: 1em 0;

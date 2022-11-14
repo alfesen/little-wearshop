@@ -8,6 +8,7 @@ import Overlay from '../UI/Overlay/Overlay'
 import { State, CartItem as CartItemType } from '../../types/Types'
 import CartItem from './CartItem'
 import {exchange} from '../../helpers/exchange'
+import BasicButton from '../UI/BasicButton/BasicButton'
 
 const CartDropdown = () => {
   const state = {
@@ -65,7 +66,7 @@ const CartDropdown = () => {
             {renderCartItems}
             <div className={s.cart__actions}>
               <button>To cart</button>
-              <button onClick={closeBackdrop}>Close</button>
+              <BasicButton onClick={closeBackdrop}>Close</BasicButton>
             </div>
             <div className={s.cart__total}>
               <h2>TotalAmount: {currency}&nbsp;{totalAmountInExchange}</h2>

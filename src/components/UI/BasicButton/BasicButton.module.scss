@@ -9,3 +9,14 @@
     background-color: #987c00;
   }
 }
+
+
+@media (max-width: 556px) {
+  .cart {
+    &__actions {
+      button {
+        font-size: 18px;
+      }
+    }
+  }
+}
