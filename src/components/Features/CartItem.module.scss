@@ -48,3 +48,17 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 556px) {
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    &__link {
+      margin-bottom: 1em;
+    }
+    &__description {
+
+      align-items: flex-start;;
+    }
+  }
+}

@@ -24,6 +24,7 @@ const CartItem = (props: CartItemType) => {
   return (
     <div id={id} className={s.item}>
       <Link
+        className={s.item__link}
         to={`/product/${id}`}
         onClick={() => dispatch(cartActions.closeCart())}>
         {name}

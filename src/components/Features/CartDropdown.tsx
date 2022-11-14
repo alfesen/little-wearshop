@@ -67,7 +67,7 @@ const CartDropdown = () => {
               <button>To cart</button>
               <button onClick={closeBackdrop}>Close</button>
             </div>
-            <div>
+            <div className={s.cart__total}>
               <h2>TotalAmount: {currency}&nbsp;{totalAmountInExchange}</h2>
             </div>
           </div>
