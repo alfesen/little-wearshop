@@ -23,8 +23,8 @@ export type CartItem = {
   price: number
   description?: string
   image?: string
-  onAdd: () => void
-  onRemove: () => void
+  onAdd?: () => void
+  onRemove?: () => void
 }
 
 export interface ProductState {

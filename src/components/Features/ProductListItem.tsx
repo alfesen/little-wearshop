@@ -11,6 +11,7 @@ export type Props = {
   description?: string
   price: number
   image: string
+  onAdd: (id: string) => void
 }
 
 const ProductListItem = (props: Props) => {
@@ -32,7 +33,7 @@ const ProductListItem = (props: Props) => {
         <img src={image} alt={name} />
       </div>
       <div className={s.product__description}>
-        <CartButton className={s.product__button} />
+        <CartButton onClick={() => props.onAdd(id)} className={s.product__button} />
         <Link to={`/product/${id}`}>{name}</Link>
         <span>
           {currency} {priceInExchange}
