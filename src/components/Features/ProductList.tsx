@@ -17,12 +17,9 @@ const ProductList = ({ category }: { category: Category }) => {
       if (id === product.id) {
         dispatch(
           cartActions.addProductToCart({
-            id: id,
-            name: name,
+            ...product,
             amount: 1,
-            price: price,
-            image: images[0],
-            description: description,
+            price: price
           })
         )
       }
