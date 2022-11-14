@@ -7,17 +7,23 @@ import { currencyActions } from '../../store/currency-slice'
 import Overlay from '../UI/Overlay/Overlay'
 import { State, CartItem as CartItemType } from '../../types/Types'
 import CartItem from './CartItem'
+import {exchange} from '../../helpers/exchange'
 
 const CartDropdown = () => {
   const state = {
     curBackdrop: useSelector((state: State) => state.currencies.show),
+    currency: useSelector((state: State) => state.currencies.currencySymbol),
+    rates: useSelector((state: State) => state.currencies.rates),
     showCart: useSelector((state: State) => state.cart.show),
     cartItems: useSelector((state: State) => state.cart.cartItems),
+    totalAmount: useSelector((state: State) => state.cart.totalAmount),
   }
 
-  const { curBackdrop, showCart, cartItems } = state
+  const { curBackdrop, showCart, cartItems, totalAmount, currency, rates } = state
 
   const dispatch = useDispatch()
+
+  const totalAmountInExchange = exchange(currency, totalAmount, rates)
 
   const toggleCart = () => {
     showCart
@@ -55,13 +61,16 @@ const CartDropdown = () => {
       <CartButton onClick={toggleCart} />
 
       {showCart && (
-        <div className={s.cart__dropdown}>
-          {renderCartItems}
-          <div className={s.cart__actions}>
-            <button>To cart</button>
-            <button onClick={closeBackdrop}>Close</button>
+          <div className={s.cart__dropdown}>
+            {renderCartItems}
+            <div className={s.cart__actions}>
+              <button>To cart</button>
+              <button onClick={closeBackdrop}>Close</button>
+            </div>
+            <div>
+              <h2>TotalAmount: {currency}&nbsp;{totalAmountInExchange}</h2>
+            </div>
           </div>
-        </div>
       )}
     </div>
   )
