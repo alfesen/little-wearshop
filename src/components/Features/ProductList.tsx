@@ -19,7 +19,8 @@ const ProductList = ({ category }: { category: Category }) => {
           cartActions.addProductToCart({
             ...product,
             amount: 1,
-            price: price
+            image: images[0],
+            price: price,
           })
         )
       }

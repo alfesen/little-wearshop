@@ -12,7 +12,6 @@ import { exchange } from '../../helpers/exchange'
 import BasicButton from '../UI/BasicButton/BasicButton'
 
 const CartDropdown = () => {
-
   const state = {
     curBackdrop: useSelector((state: State) => state.currencies.show),
     currency: useSelector((state: State) => state.currencies.currencySymbol),
@@ -73,7 +72,9 @@ const CartDropdown = () => {
         )
       })
     ) : (
-      <div className={s.cart__empty}>Cart is Empty</div>
+      <div className={s.cart__empty}>
+        <h4>Cart is Empty</h4>
+      </div>
     )
 
   return (
@@ -85,10 +86,12 @@ const CartDropdown = () => {
         <div className={s.cart__dropdown}>
           {renderCartItems}
           <div className={s.cart__actions}>
-            {cartItems.length > 0 && <Link to='/checkout'>
-              <BasicButton>Checkout</BasicButton>
-            </Link>}
-           <BasicButton
+            {cartItems.length > 0 && (
+              <Link to='/checkout'>
+                <BasicButton onClick={closeBackdrop}>Checkout</BasicButton>
+              </Link>
+            )}
+            <BasicButton
               onClick={closeBackdrop}
               className={s.cart__actions_close}>
               Close
@@ -96,7 +99,7 @@ const CartDropdown = () => {
           </div>
           <div className={s.cart__total}>
             <h2>
-              TotalAmount: {currency}&nbsp;{totalAmountInExchange}
+              Total Amount: {currency}&nbsp;{totalAmountInExchange}
             </h2>
           </div>
         </div>
