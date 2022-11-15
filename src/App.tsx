@@ -5,9 +5,6 @@ import { State, Category } from './types/Types'
 import { currencyActions } from './store/currency-slice'
 import NavBar from './components/views/Navigation/NavBar'
 import HomeButton from './components/controllers/HomeButton/HomeButton'
-import ProductPage from './components/pages/ProductPage/ProductPage'
-import NotFound from './components/views/NotFound/NotFound'
-import Checkout from './components/pages/CheckoutPage/CheckoutPage'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
@@ -16,6 +13,13 @@ function App() {
   const Home = lazy(() => import('./components/pages/Home/Home'))
   const ProductList = lazy(
     () => import('./components/views/ProductList/ProductList')
+  )
+  const ProductPage = lazy(
+    () => import('./components/pages/ProductPage/ProductPage')
+  )
+  const NotFound = lazy(() => import('./components/views/NotFound/NotFound'))
+  const CheckoutPage = lazy(
+    () => import('./components/pages/CheckoutPage/CheckoutPage')
   )
 
   useEffect(() => {
@@ -63,7 +67,7 @@ function App() {
               <ProductPage />
             </Route>
             <Route path='/checkout'>
-              <Checkout />
+              <CheckoutPage />
             </Route>
             <Route path='*' exact={true}>
               <NotFound />
