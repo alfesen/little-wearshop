@@ -40,6 +40,7 @@ const NavBarLinks = () => {
     return (
       <NavLink
         onClick={handleNav}
+        activeClassName={s.active}
         className={s.nav__link}
         key={`${c.id}_key`}
         to={`/${c.name}`}>
