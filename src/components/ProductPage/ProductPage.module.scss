@@ -52,14 +52,11 @@
     display: flex;
     justify-content: space-between;
     .cart__button {
-      background-color: gold;
       padding: 0.5em 1em;
       border: none;
       cursor: pointer;
       transition: background-color 0.2s;
-      &:hover {
-        background-color: #987c00;
-      }
+      
     }
     .amount__input {
       appearance: none;

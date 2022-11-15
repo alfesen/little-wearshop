@@ -5,6 +5,9 @@
 
   &__empty {
     text-align: center;
+    h4 {
+      padding: 1em;
+    }
   }
 
   &__dropdown {
@@ -30,7 +33,7 @@
         background-color: #bbb !important;
       }
     }
-    
+
     button {
       appearance: none;
       border: none;

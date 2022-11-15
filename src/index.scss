@@ -1,5 +1,10 @@
-$gold: #ffd700;
-$dark-gold: #987c00;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@400;600;700&display=swap');
+:root {
+  --gold: gold;
+  --dark-gold: #e0b803;
+  --montserrat: 'Montserrat', sans-serif;
+  --poppins: 'Poppins', sans-serif;
+}
 
 *,
 *::after,
@@ -11,6 +16,7 @@ $dark-gold: #987c00;
 
 body {
   position: relative;
+  font-family: var(--montserrat)
 }
 
 .container {
