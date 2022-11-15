@@ -3,19 +3,17 @@
   padding: 1em;
   outline: none;
   cursor: pointer;
-  background-color: gold;
+  background-color: var(--gold);
   aspect-ratio: 1/1;
   border: none;
   border-radius: 50%;
   scale: 0.7;
   z-index: 10;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: var(--dark-gold);
+  }
   img {
     width: 1.5rem;
-    transition: opacity 0.2s;
-  }
-  &:hover {
-    img {
-      opacity: 0.5;
-    }
   }
 }

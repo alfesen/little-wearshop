@@ -3,10 +3,10 @@
   padding: 0.6em 1em;
   font-size: 1.2em;
   border: none;
-  background-color: gold;
+  background-color: var(--gold);
   cursor: pointer;
   transition: background-color 0.2s;
   &:hover {
-    background-color: #e0b803;
+    background-color: var(--dark-gold);
   }
 }

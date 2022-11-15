@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@400;600;700&display=swap');
+:root {
+  --gold: gold;
+  --dark-gold: #e0b803;
+  --montserrat: 'Montserrat', sans-serif;
+  --poppins: 'Poppins', sans-serif;
+}
+
 *,
 *::after,
 *::before {
@@ -9,7 +16,7 @@
 
 body {
   position: relative;
-  font-family: 'Monserrat', sans-serif;
+  font-family: var(--montserrat)
 }
 
 .container {

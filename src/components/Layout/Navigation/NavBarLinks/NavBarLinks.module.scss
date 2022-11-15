@@ -4,9 +4,9 @@
     width: max-content;
     align-items: center;
     justify-content: space-around;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--poppins);
     font-weight: 600;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
   }
   &__link {
     color: #fff;

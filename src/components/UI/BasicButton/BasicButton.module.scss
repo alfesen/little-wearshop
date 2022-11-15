@@ -3,12 +3,12 @@
   border: none;
   text-transform: uppercase;
   padding: 0.5em 1em;
-  background-color: gold;
+  background-color: var(--gold);
   cursor: pointer;
   transition: background-color 0.1s;
   font-family: 'Poppins', sans-serif;
   &:hover {
-    background-color: #987c00;
+    background-color: var(--dark-gold);
   }
 }
 
