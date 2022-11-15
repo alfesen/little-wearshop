@@ -1,15 +1,18 @@
-import CartButton from '../UI/CartButton/CartButton'
-import s from './CartDropdown.module.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { cartActions } from '../../store/cart-slice'
-import { backdropActions } from '../../store/backdrop-slice'
-import { currencyActions } from '../../store/currency-slice'
-import Overlay from '../UI/Overlay/Overlay'
-import { State, CartItem as CartItemType } from '../../types/Types'
-import CartItem from './CartItem'
-import { exchange } from '../../helpers/exchange'
-import BasicButton from '../UI/BasicButton/BasicButton'
+
+import { State, CartItem as CartItemType } from '../../../types/Types'
+import { cartActions } from '../../../store/cart-slice'
+import { backdropActions } from '../../../store/backdrop-slice'
+import { currencyActions } from '../../../store/currency-slice'
+import { exchange } from '../../../helpers/exchange'
+
+import CartItem from '../../models/CartItem/CartItem'
+import CartButton from '../../controllers/CartButton/CartButton'
+import BasicButton from '../../controllers/BasicButton/BasicButton'
+import Overlay from '../../controllers/Overlay/Overlay'
+
+import s from './CartDropdown.module.scss'
 
 const CartDropdown = () => {
   const state = {

@@ -1,7 +1,7 @@
 import s from './Home.module.scss'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { State } from '../../types/Types'
+import { State } from '../../../types/Types'
 const Home = () => {
   const categories = useSelector((state: State) => state.products.categories)
 

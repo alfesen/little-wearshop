@@ -1,9 +1,12 @@
 import { useRef } from 'react'
-import s from './OrderForm.module.scss'
-import BasicButton from '../../UI/BasicButton/BasicButton'
+import { useDispatch } from 'react-redux'
+
 import { Order } from '../../../types/Types'
 import { cartActions } from '../../../store/cart-slice'
-import { useDispatch } from 'react-redux'
+
+import BasicButton from '../BasicButton/BasicButton'
+
+import s from './OrderForm.module.scss'
 
 const OrderForm = (props: Order) => {
   const { items, currencySymbol, totalAmount } = props

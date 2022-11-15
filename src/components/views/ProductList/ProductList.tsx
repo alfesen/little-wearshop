@@ -1,10 +1,13 @@
 import { Fragment } from 'react'
-import { Category } from '../../types/Types'
-import ProductListItem from './ProductListItem'
-import s from './ProductList.module.scss'
-import Heading from '../UI/Heading/Heading'
 import { useDispatch } from 'react-redux'
-import { cartActions } from '../../store/cart-slice'
+
+import { Category } from '../../../types/Types'
+import { cartActions } from '../../../store/cart-slice'
+
+import Heading from '../../models/Heading/Heading'
+import ProductListItem from '../../models/ProductListItem/ProductListItem'
+
+import s from './ProductList.module.scss'
 
 const ProductList = ({ category }: { category: Category }) => {
   const { name, products } = category

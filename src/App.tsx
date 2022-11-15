@@ -3,18 +3,20 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { State, Category } from './types/Types'
 import { currencyActions } from './store/currency-slice'
-import NavBar from './components/Layout/Navigation/NavBar'
-import HomeButton from './components/UI/HomeButton/HomeButton'
-import ProductPage from './components/ProductPage/ProductPage'
-import NotFound from './components/UI/NotFound/NotFound'
-import Checkout from './components/CheckoutPage/CheckoutPage'
+import NavBar from './components/views/Navigation/NavBar'
+import HomeButton from './components/controllers/HomeButton/HomeButton'
+import ProductPage from './components/pages/ProductPage/ProductPage'
+import NotFound from './components/views/NotFound/NotFound'
+import Checkout from './components/pages/CheckoutPage/CheckoutPage'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
   const dispatch = useDispatch()
 
-  const Home = lazy(() => import('./components/Home/Home'))
-  const ProductList = lazy(() => import('./components/Features/ProductList'))
+  const Home = lazy(() => import('./components/pages/Home/Home'))
+  const ProductList = lazy(
+    () => import('./components/views/ProductList/ProductList')
+  )
 
   useEffect(() => {
     const requestURL =
@@ -34,7 +36,6 @@ function App() {
       )
     }
   }, [dispatch])
-
 
   const routes = categories.map((c: Category) => {
     return (
@@ -64,7 +65,9 @@ function App() {
             <Route path='/checkout'>
               <Checkout />
             </Route>
-            <Route path ='*' exact={true}><NotFound /></Route>
+            <Route path='*' exact={true}>
+              <NotFound />
+            </Route>
           </Switch>
         </Suspense>
       </section>

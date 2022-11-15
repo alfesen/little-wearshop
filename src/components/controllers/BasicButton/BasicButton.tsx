@@ -1,4 +1,5 @@
 import s from './BasicButton.module.scss'
+
 type Props = {
   className?: string
   onClick?: () => void

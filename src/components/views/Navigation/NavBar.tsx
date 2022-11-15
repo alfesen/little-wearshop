@@ -1,8 +1,9 @@
-import s from './NavBar.module.scss'
 import NavBarLinks from './NavBarLinks/NavBarLinks'
 import Logo from './Logo/Logo'
-import CurrencySelect from '../../UI/CurrencySelect/CurrencySelect'
-import CartDropdown from '../../Features/CartDropdown'
+import CartDropdown from '../CartDropdown/CartDropdown'
+import CurrencySelect from '../../controllers/CurrencySelect/CurrencySelect'
+
+import s from './NavBar.module.scss'
 
 const NavBar = () => {
   return (

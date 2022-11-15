@@ -1,5 +1,6 @@
-import s from './GoBackButton.module.scss'
 import { useHistory } from 'react-router-dom'
+
+import s from './GoBackButton.module.scss'
 
 const GoBackButton = () => {
   const history = useHistory()

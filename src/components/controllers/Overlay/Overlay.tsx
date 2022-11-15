@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import { createPortal } from 'react-dom'
+
 import s from './Overlay.module.scss'
 
 type Props = {
