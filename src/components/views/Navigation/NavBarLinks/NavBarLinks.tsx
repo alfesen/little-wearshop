@@ -1,9 +1,11 @@
 import { useState, useEffect, Fragment } from 'react'
-import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import s from './NavBarLinks.module.scss'
+import { NavLink } from 'react-router-dom'
+
 import { State } from '../../../../types/Types'
 import { navActions } from '../../../../store/nav-slice'
+
+import s from './NavBarLinks.module.scss'
 
 const burger = (
   <svg viewBox='0 0 100 80' width='40' height='40'>
@@ -51,7 +53,11 @@ const NavBarLinks = () => {
 
   return (
     <Fragment>
-      {burgerVisible && <button onClick={handleNav} className={s.burger}>{burger}</button>}
+      {burgerVisible && (
+        <button onClick={handleNav} className={s.burger}>
+          {burger}
+        </button>
+      )}
       <div className={`${s.nav__links} ${showNav && s.dropdown}`}>
         {navLinks}
       </div>

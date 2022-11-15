@@ -1,13 +1,13 @@
 import { Fragment } from 'react'
 import s from './CheckoutPage.module.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import CartItem from '../Features/CartItem'
-import { cartActions } from '../../store/cart-slice'
-import { State } from '../../types/Types'
-import { exchange } from '../../helpers/exchange'
-import Heading from '../UI/Heading/Heading'
-import GoBackButton from '../UI/GoBackButton/GoBackButton'
-import OrderForm from './OrderForm/OrderForm'
+import CartItem from '../../models/CartItem/CartItem'
+import { cartActions } from '../../../store/cart-slice'
+import { State } from '../../../types/Types'
+import { exchange } from '../../../helpers/exchange'
+import Heading from '../../models/Heading/Heading'
+import GoBackButton from '../../controllers/GoBackButton/GoBackButton'
+import OrderForm from '../../controllers/OrderForm/OrderForm'
 
 const Checkout = () => {
   const state = {
@@ -63,7 +63,11 @@ const Checkout = () => {
               </span>
             </h3>
           </div>
-          <OrderForm items={items} totalAmount={totalExchange} currencySymbol={currency}/>
+          <OrderForm
+            items={items}
+            totalAmount={totalExchange}
+            currencySymbol={currency}
+          />
         </Fragment>
       ) : (
         <div className={s.checkout__empty}>

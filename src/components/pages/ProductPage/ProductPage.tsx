@@ -2,12 +2,12 @@ import s from './ProductPage.module.scss'
 import { useState, Fragment, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { State } from '../../types/Types'
-import { exchange } from '../../helpers/exchange'
-import { cartActions } from '../../store/cart-slice'
-import GoBackButton from '../UI/GoBackButton/GoBackButton'
-import NotFound from '../UI/NotFound/NotFound'
-import BasicButton from '../UI/BasicButton/BasicButton'
+import { State } from '../../../types/Types'
+import { exchange } from '../../../helpers/exchange'
+import { cartActions } from '../../../store/cart-slice'
+import GoBackButton from '../../controllers/GoBackButton/GoBackButton'
+import NotFound from '../../views/NotFound/NotFound'
+import BasicButton from '../../controllers/BasicButton/BasicButton'
 
 type Params = {
   id: string

@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import s from './CurrencySelect.module.scss'
 import { useSelector, useDispatch } from 'react-redux'
+
 import { State } from '../../../types/Types'
 import { currencyActions } from '../../../store/currency-slice'
 import { cartActions } from '../../../store/cart-slice'
+
+import s from './CurrencySelect.module.scss'
 
 const CurrencySelect = () => {
   const [selectedCurrency, setSelectedCurrency] = useState('USD')
@@ -14,7 +16,7 @@ const CurrencySelect = () => {
     showCart: useSelector((state: State) => state.cart.show),
   }
 
-  const {currencies, showCurrencySelect, showCart} = state
+  const { currencies, showCurrencySelect, showCart } = state
 
   const dispatch = useDispatch()
 

@@ -1,9 +1,12 @@
-import s from './ProductListItem.module.scss'
-import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { State } from '../../types/Types'
-import { exchange } from '../../helpers/exchange'
-import CartButton from '../UI/CartButton/CartButton'
+import { Link } from 'react-router-dom'
+
+import { State } from '../../../types/Types'
+import { exchange } from '../../../helpers/exchange'
+
+import CartButton from '../../controllers/CartButton/CartButton'
+
+import s from './ProductListItem.module.scss'
 
 export type Props = {
   id: string
@@ -33,7 +36,10 @@ const ProductListItem = (props: Props) => {
         <img src={image} alt={name} />
       </div>
       <div className={s.product__description}>
-        <CartButton onClick={() => props.onAdd(id)} className={s.product__button} />
+        <CartButton
+          onClick={() => props.onAdd(id)}
+          className={s.product__button}
+        />
         <Link to={`/product/${id}`}>{name}</Link>
         <span>
           {currency} {priceInExchange}

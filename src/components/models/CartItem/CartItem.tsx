@@ -1,12 +1,14 @@
-import s from './CartItem.module.scss'
 import { useState, Fragment } from 'react'
-import { CartItem as CartItemType, State } from '../../types/Types'
-import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { cartActions } from '../../store/cart-slice'
-import BasicButton from '../UI/BasicButton/BasicButton'
+import { Link } from 'react-router-dom'
 
-import { exchange } from '../../helpers/exchange'
+import { cartActions } from '../../../store/cart-slice'
+import { CartItem as CartItemType, State } from '../../../types/Types'
+import { exchange } from '../../../helpers/exchange'
+
+import BasicButton from '../../controllers/BasicButton/BasicButton'
+
+import s from './CartItem.module.scss'
 
 const CartItem = (props: CartItemType) => {
   const [showDescription, setShowDescription] = useState(false)
@@ -52,17 +54,13 @@ const CartItem = (props: CartItemType) => {
             )}
           </div>
         </div>
-        <div className={`${s.item__details} ${description ?  s.checkout : '' }`}>
+        <div className={`${s.item__details} ${description ? s.checkout : ''}`}>
           <div className={s.item__details_amount}>
             <span>Amount:</span>{' '}
             <div className={s.item__details_amount_controls}>
-              <button onClick={props.onAdd}>
-                +
-              </button>
+              <button onClick={props.onAdd}>+</button>
               <span>{amount}</span>
-              <button onClick={props.onRemove}>
-                -
-              </button>
+              <button onClick={props.onRemove}>-</button>
             </div>
           </div>
           <p>
