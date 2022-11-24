@@ -27,10 +27,10 @@
     margin: 0.5em 0;
     padding: 0.5em;
 
-    &_close {
-      background-color: #ddd !important;
+    button:last-of-type.cart__actions_close {
+      background-color: #ddd;
       &:hover {
-        background-color: #bbb !important;
+        background-color: #bbb;
       }
     }
 
