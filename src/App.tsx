@@ -1,10 +1,11 @@
 import { useEffect, lazy, Suspense } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { State, Category } from './types/Types'
 import { currencyActions } from './store/currency-slice'
-import NavBar from './components/views/Navigation/NavBar'
-import HomeButton from './components/controllers/HomeButton/HomeButton'
+import MainLayout from './components/views/MainLayout/MainLayout'
+import NotFound from './components/views/NotFound/NotFound'
+// import Home from './components/pages/Home/Home'
 
 function App() {
   const categories = useSelector((state: State) => state.products.categories)
@@ -17,7 +18,7 @@ function App() {
   const ProductPage = lazy(
     () => import('./components/pages/ProductPage/ProductPage')
   )
-  const NotFound = lazy(() => import('./components/views/NotFound/NotFound'))
+  // const NotFound = lazy(() => import('./components/views/NotFound/NotFound'))
   const CheckoutPage = lazy(
     () => import('./components/pages/CheckoutPage/CheckoutPage')
   )
@@ -41,40 +42,33 @@ function App() {
     }
   }, [dispatch])
 
-  const routes = categories.map((c: Category) => {
-    return (
-      <Route key={c.id} path={`/${c.name}`}>
-        <ProductList key={`${c.id}_category_key`} category={c} />
-      </Route>
-    )
+  const categoryRoutes = categories.map((c: Category) => {
+    return {
+      path: `/${c.name}`,
+      element: <ProductList key={`${c.id}_category_key`} category={c} />,
+    }
   })
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <MainLayout />,
+      children: [
+        ...categoryRoutes,
+        {path: '*', element: <NotFound/>},
+        {path: '/', element: <Navigate to='/home' />},
+        { path: '/home', element: <Home /> },
+        { path: '/product/:id', element: <ProductPage /> },
+        { path: '/checkout', element: <CheckoutPage /> },
+      ],
+    },
+  ])
 
   return (
     <div className='App'>
-      <NavBar />
-      <HomeButton />
-      <section className={`container`}>
-        <Suspense>
-          <Switch>
-            <Route exact path='/'>
-              <Redirect to='/home' />
-            </Route>
-            <Route path='/home'>
-              <Home />
-            </Route>
-            {routes}
-            <Route path='/product/:id'>
-              <ProductPage />
-            </Route>
-            <Route path='/checkout'>
-              <CheckoutPage />
-            </Route>
-            <Route path='*' exact={true}>
-              <NotFound />
-            </Route>
-          </Switch>
-        </Suspense>
-      </section>
+      <Suspense>
+      <RouterProvider router={router} />
+      </Suspense>
     </div>
   )
 }
